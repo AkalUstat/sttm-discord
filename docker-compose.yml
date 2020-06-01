@@ -1,0 +1,8 @@
+version: '3'
+services: 
+  sttm-discord: 
+    build: .
+    restart: always
+    env_file: 
+      - .env
+    
