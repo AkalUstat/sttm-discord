@@ -1,0 +1,13 @@
+{
+  "prefix": "sttm",
+  "botComands": [
+    {
+      "name": "firstlet",
+      "desc": "Search STTM DB by the first letters of each word"
+    },
+    {
+      "name": "help",
+      "desc": "get help "
+    }
+  ]
+}

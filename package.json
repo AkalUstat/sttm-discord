@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:update": "docker run -d -it --name sttm-discord --mount type=bind,source=\"$pwd\",target=/app node:latest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/AkalUstat/sttm-discord#readme",
   "dependencies": {
+    "@sttm/banidb": "^2.2.4",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0"
   }

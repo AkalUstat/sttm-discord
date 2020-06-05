@@ -1,7 +1,11 @@
 {
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
   },
   "rules": {
     "array-bracket-spacing": [
