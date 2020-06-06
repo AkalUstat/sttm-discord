@@ -11,7 +11,17 @@ const help = ( ) => {
   return embed
 }
 
+const search = async query => {
+  // return (
+  //  fetch( buildUrl( { q: query} ) )
+  //   .then( res => res.json )
+  //   .then( json => json.verses ) 
+  //  )
+  throw( 'Invalid config' )
+}
+
 
 module.exports = {
+  search,
   help
 }

@@ -1,23 +1,15 @@
-const {help} = require( './messages' )
+const {help, search} = require( './messages' )
 
 const buildUrl = require( '@sttm/banidb' ).buildApiUrl
 
-const search = async query => {
-  return (
-   fetch( buildUrl( { q: query} ) )
-    .then( res => res.json )
-    .then( json => json.verses ) 
-   )
-}
-
-
 const commandMap  = {
-  "help": () => help()
+  "help": () => help(),
+  "firstlet": async () => await search()
 }
 
-const sendMsg = ( {channel }, cmd, args ) =>{
+const sendMsg = async ( {channel }, cmd, args ) =>{
   if ( !commandMap[ cmd ] ) channel.send( 'Invalid command' )
-  else channel.send( commandMap[ cmd ]( ...args ) )
+  else channel.send( await commandMap[ cmd ]( ...args ) )
 }
 module.exports = {
   search, 
