@@ -1,27 +1,27 @@
-const { botComands } = require( './config.json' )
-const { MessageEmbed } = require( 'discord.js' )
+const {botComands} = require( './config.json' )
+const {MessageEmbed} = require( 'discord.js' )
 
-const help = ( ) => {
-  const embed = new MessageEmbed()
+const help = () => {
+	const embed = new MessageEmbed()
 
-  embed.setTitle( "STTM Discord Help" )
+	embed.setTitle( "STTM Discord Help" )
 
-  botComands.forEach( ( {name, desc} ) => { embed.addField( name, desc )} )
+	botComands.forEach( ( {name, desc} ) => {embed.addField( name, desc )} )
 
-  return embed
+	return embed
 }
 
 const search = async query => {
-  // return (
-  //  fetch( buildUrl( { q: query} ) )
-  //   .then( res => res.json )
-  //   .then( json => json.verses ) 
-  //  )
-  throw( 'Invalid config' )
+	// return (
+	//  fetch( buildUrl( { q: query} ) )
+	//   .then( res => res.json )
+	//   .then( json => json.verses ) 
+	//  )
+	throw ( 'Invalid config' )
 }
 
 
 module.exports = {
-  search,
-  help
+	search,
+	help
 }
