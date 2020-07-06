@@ -3,7 +3,7 @@ const {help, search} = require( './functions' )
 
 const commandMap = {
 	"help": () => help(),
-	"firstlet": async () => await search()
+	"firstlet": async query => await search( query )
 }
 
 const sendMsg = async ( {channel}, cmd, args ) => {

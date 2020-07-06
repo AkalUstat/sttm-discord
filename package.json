@@ -1,29 +1,30 @@
 {
-  "name": "sttm-discord",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:update": "docker run -d -it --name sttm-discord --mount type=bind,source=\"$pwd\",target=/app node:latest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AkalUstat/sttm-discord.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AkalUstat/sttm-discord/issues"
-  },
-  "homepage": "https://github.com/AkalUstat/sttm-discord#readme",
-  "dependencies": {
-    "@sttm/banidb": "^2.2.4",
-    "discord.js": "^12.2.0",
-    "dotenv": "^8.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.4.0"
-  }
+	"name": "sttm-discord",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev:update": "docker run -d -it --name sttm-discord --mount type=bind,source=\"$pwd\",target=/app node:latest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AkalUstat/sttm-discord.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/AkalUstat/sttm-discord/issues"
+	},
+	"homepage": "https://github.com/AkalUstat/sttm-discord#readme",
+	"dependencies": {
+		"@sttm/banidb": "^2.2.4",
+		"discord.js": "^12.2.0",
+		"dotenv": "^8.2.0",
+		"nodemon": "2.0.4"
+	},
+	"devDependencies": {
+		"eslint": "^7.4.0"
+	}
 }

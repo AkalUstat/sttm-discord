@@ -17,7 +17,7 @@ const search = async query => {
 	//   .then( res => res.json )
 	//   .then( json => json.verses ) 
 	//  )
-	throw ( 'Invalid config' )
+	return query
 }
 
 
