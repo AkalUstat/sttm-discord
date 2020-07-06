@@ -1,18 +1,27 @@
-const {help, search} = require( './messages' )
+const { botComands } = require( './config.json' )
+const { MessageEmbed } = require( 'discord.js' )
 
-const buildUrl = require( '@sttm/banidb' ).buildApiUrl
+const help = ( ) => {
+  const embed = new MessageEmbed()
 
-const commandMap  = {
-  "help": () => help(),
-  "firstlet": async () => await search()
+  embed.setTitle( "STTM Discord Help" )
+
+  botComands.forEach( ( {name, desc} ) => { embed.addField( name, desc )} )
+
+  return embed
 }
 
-const sendMsg = async ( {channel }, cmd, args ) =>{
-  if ( !commandMap[ cmd ] ) channel.send( 'Invalid command' )
-  else channel.send( await commandMap[ cmd ]( ...args ) )
+const search = async query => {
+  // return (
+  //  fetch( buildUrl( { q: query} ) )
+  //   .then( res => res.json )
+  //   .then( json => json.verses ) 
+  //  )
+  throw( 'Invalid config' )
 }
+
+
 module.exports = {
-  search, 
-  commandMap,
-  sendMsg
+  search,
+  help
 }

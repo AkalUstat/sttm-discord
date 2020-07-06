@@ -1,27 +1,17 @@
-const { botComands } = require( './config.json' )
-const { MessageEmbed } = require( 'discord.js' )
+const {help, search} = require( './functions' )
 
-const help = ( ) => {
-  const embed = new MessageEmbed()
 
-  embed.setTitle( "STTM Discord Help" )
-
-  botComands.forEach( ( {name, desc} ) => { embed.addField( name, desc )} )
-
-  return embed
+const commandMap  = {
+  "help": () => help(),
+  "firstlet": async () => await search()
 }
 
-const search = async query => {
-  // return (
-  //  fetch( buildUrl( { q: query} ) )
-  //   .then( res => res.json )
-  //   .then( json => json.verses ) 
-  //  )
-  throw( 'Invalid config' )
+const sendMsg = async ( {channel }, cmd, args ) =>{
+  if ( !commandMap[ cmd ] ) throw "Invalid command" 
+  else channel.send( await commandMap[ cmd ]( ...args ) )
 }
-
-
 module.exports = {
-  search,
-  help
+  search, 
+  commandMap,
+  sendMsg
 }
