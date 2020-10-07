@@ -1,6 +1,6 @@
 {
   "prefix": "sttm",
-  "botComands": [
+  "botComandMap": [
     {
       "name": "firstlet",
       "desc": "Search STTM DB by the first letters of each word"
